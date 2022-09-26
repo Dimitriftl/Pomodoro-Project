@@ -1,0 +1,248 @@
+/* TIMER */
+
+.pomodoro {
+  position: relative;
+  top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.p-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  color: #fff;
+  background: rgb(20, 20, 20);
+  background: linear-gradient(
+    164deg,
+    rgba(20, 20, 20, 1) 1%,
+    rgba(0, 0, 0, 1) 91%
+  );
+  border: 2px solid rgb(51, 51, 51);
+  border-radius: 10%;
+}
+
+.p-container::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 185, 255, 1) 1%,
+    rgba(136, 0, 255, 1) 52%,
+    rgba(0, 39, 255, 1) 99%
+  );
+
+  z-index: -1;
+  border-radius: 10%;
+  filter: blur(20px);
+  animation: animate 4s linear infinite alternate;
+}
+
+.p-container-break {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  color: #fff;
+  background: rgb(20, 20, 20);
+  background: linear-gradient(
+    164deg,
+    rgba(20, 20, 20, 1) 1%,
+    rgba(0, 0, 0, 1) 91%
+  );
+  border: 2px solid rgb(51, 51, 51);
+  border-radius: 10%;
+}
+
+.p-container-break::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(
+    156deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(8, 22, 157, 1) 20%,
+    rgba(255, 255, 255, 1) 51%,
+    rgba(2, 162, 242, 1) 78%,
+    rgba(255, 255, 255, 1) 99%
+  );
+  z-index: -1;
+  border-radius: 10%;
+  filter: blur(20px);
+  animation: animatetwo 6s linear infinite alternate;
+}
+
+@keyframes animate {
+  0% {
+    box-shadow: 0 0 0 20px rgb(15, 40, 184, 0.8);
+  }
+  25% {
+    box-shadow: 0 0 0 40px rgb(55, 31, 112, 0.8);
+  }
+
+  50% {
+    box-shadow: 0 0 0 25px rgb(15, 40, 184, 0.8);
+  }
+  75% {
+    box-shadow: 0 0 0 35px rgb(55, 31, 112, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgb(15, 40, 184, 0.8);
+  }
+}
+
+@keyframes animatetwo {
+  0% {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.6);
+  }
+  25% {
+    box-shadow: 0 0 0 20px rgba(2, 162, 242, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 0 20px rgb(255, 255, 255, 0.6);
+  }
+  75% {
+    box-shadow: 0 0 0 20px #08169d;
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgb(255, 255, 255, 0.6);
+  }
+}
+
+.time {
+  display: flex;
+  position: relative;
+  top: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+/* BUTTON */
+.buttons {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  top: 50px;
+  width: 100%;
+  gap: 20px;
+}
+
+.buttons button {
+  display: flex;
+  justify-content: center;
+  height: 45px;
+  width: 100px;
+  font-size: 20px;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  border: solid 2px transparent;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 185, 255, 1) 1%,
+      rgba(136, 0, 255, 1) 52%,
+      rgba(0, 39, 255, 1) 99%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px rgb(21, 21, 21) inset;
+}
+
+.toggle-sentence {
+  position: relative;
+  top: 30px;
+  color: #fff;
+  font-size: 16px;
+}
+
+@media all and (max-width: 550px) {
+  .p-container {
+    width: 330px;
+    height: 330px;
+  }
+
+  .p-container::before {
+    width: 330px;
+    height: 330px;
+  }
+
+  .p-container-break {
+    width: 330px;
+    height: 330px;
+  }
+
+  .p-container-break::before {
+    width: 330px;
+    height: 330px;
+  }
+
+  .time {
+    font-size: 40px;
+  }
+
+  .toggle-sentence {
+    font-size: 22px;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .p-container {
+    position: relative;
+    bottom: 50px;
+    width: 280px;
+    height: 280px;
+  }
+
+  .p-container::before {
+    width: 280px;
+    height: 280px;
+  }
+
+  .p-container-break {
+    position: relative;
+    bottom: 50px;
+    width: 280px;
+    height: 280px;
+  }
+
+  .p-container-break::before {
+    width: 280px;
+    height: 280px;
+  }
+
+  .time {
+    position: relative;
+    top: 43px;
+    font-size: 35px;
+  }
+
+  .toggle-sentence {
+    font-size: 16px;
+  }
+
+  .buttons button {
+    height: 40px;
+    width: 80px;
+    font-size: 16px;
+  }
+
+  .toggle-sentence {
+    font-size: 18px;
+  }
+}

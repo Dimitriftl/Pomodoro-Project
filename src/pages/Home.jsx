@@ -1,18 +1,46 @@
-import React from 'react';
-import Timer from '../components/Timer';
-
+import React, { useState } from "react";
+import SettingModal from "../components/SettingModal/SettingModal";
+import Timer from "../components/Timer/Timer";
+import "./Home.css";
 
 const Home = () => {
-    return (
-        <div className='container'>
-            <div className='header'>
-            <h1 className='first-title'>Dimitri's Pomodoro</h1>
-            <a href="#">Login</a>
-            </div>
-           <Timer />
-        </div>
-        
-    );
+  const [minutes, setMinutes] = useState();
+  const [seconds, setSeconds] = useState(0);
+  const [minutesBreak, setMinutesBreak] = useState(1);
+  const [preMinutes, setPreMinutes] = useState(1);
+  const [autoPlayTimer, setAutoPlayTimer] = useState(false);
+
+  return (
+    <div className="body">
+      <div className="header">
+        <h1 className="first-title">Dimitri's Pomodoro</h1>
+      </div>
+      <div className="container">
+        <Timer
+          minutes={minutes}
+          setMinutes={setMinutes}
+          minutesBreak={minutesBreak}
+          setMinutesBreak={setMinutesBreak}
+          seconds={seconds}
+          setSeconds={setSeconds}
+          preMinutes={preMinutes}
+          setPreMinutes={setPreMinutes}
+          autoPlayTimer={autoPlayTimer}
+          setAutoPlayTimer={setAutoPlayTimer}
+        />
+        <SettingModal
+          setMinutes={setMinutes}
+          minutes={minutes}
+          minutesBreak={minutesBreak}
+          setMinutesBreak={setMinutesBreak}
+          preMinutes={preMinutes}
+          setPreMinutes={setPreMinutes}
+          autoPlayTimer={autoPlayTimer}
+          setAutoPlayTimer={setAutoPlayTimer}
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Home;
