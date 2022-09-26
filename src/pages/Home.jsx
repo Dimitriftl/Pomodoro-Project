@@ -6,8 +6,8 @@ import "./Home.css";
 const Home = () => {
   const [minutes, setMinutes] = useState();
   const [seconds, setSeconds] = useState(0);
-  const [minutesBreak, setMinutesBreak] = useState(1);
-  const [preMinutes, setPreMinutes] = useState(1);
+  const [minutesBreak, setMinutesBreak] = useState(5);
+  const [preMinutes, setPreMinutes] = useState(25);
   const [autoPlayTimer, setAutoPlayTimer] = useState(false);
 
   return (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useSound from "use-sound";
 import { ToastContainer, toast } from "react-toastify";
 import "./style.css";
 import "../SettingButton/SettingButton.css";
@@ -7,7 +8,7 @@ import PauseSvg from "../svg/PauseSvg";
 import PlaySvg from "../svg/PlaySvg";
 import ResetSvg from "../svg/ResetSvg";
 import PassSvg from "../svg/PassSvg";
-import sound from "./Ya-Boy.mp3";
+import CheckSound from "./check-sound.mp3";
 
 let interval = null;
 const Timer = ({
@@ -23,6 +24,7 @@ const Timer = ({
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
   const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
   const [isBreakRunning, setIsBreakRunning] = useState(false);
+  let song = new Audio(CheckSound);
 
   useEffect(() => {
     if (preMinutes) {
@@ -39,7 +41,7 @@ const Timer = ({
 
     interval = setInterval(() => {
       setSeconds((seconds) => seconds - 1);
-    }, 100);
+    }, 1000);
     return () => clearInterval(interval);
   }
 
@@ -62,11 +64,13 @@ const Timer = ({
       setSeconds(0);
       setMinutes(minutesBreak);
       notif();
+      song.play();
     }
     if (isBreakRunning == true && minutes < 0) {
       setIsBreakRunning(false);
-      setMinutes(preMinutes)
+      setMinutes(preMinutes);
       notifBrake();
+      song.play();
     }
   }, [seconds]);
 
