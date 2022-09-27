@@ -22,11 +22,19 @@ const Settings = ({
   const handleChange = (event) => {
     const result = event.target.value.replace(/\D/g, "");
 
+    if (result === "0") {
+      return "";
+    }
+
     setPreMinutes(result);
   };
 
   const handleChangeBreak = (event) => {
     const result = event.target.value.replace(/\D/g, "");
+
+    if (result === "0") {
+      return "";
+    }
 
     setMinutesBreak(result);
   };
