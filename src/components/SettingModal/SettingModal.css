@@ -52,7 +52,6 @@ body.active-modal {
   display: flex;
   justify-content: center;
   gap: 20px;
-  
 }
 input {
   outline: none;
@@ -103,7 +102,7 @@ input {
   color: #fff;
   border-radius: 10px;
   cursor: pointer;
-  border: solid 2px rgb(110, 115, 192);;
+  border: solid 2px rgb(110, 115, 192);
   background-origin: border-box;
   background-clip: content-box, border-box;
   box-shadow: 2px 1000px 1px rgb(21, 21, 21) inset;
@@ -121,16 +120,13 @@ input {
   margin-left: 24px;
 }
 
-
-
-@media all and (max-width: 550px){
-
+@media all and (max-width: 550px) {
   .modal-content {
     max-width: 300px;
     min-width: 250px;
   }
 
-  .btn-close-modal{
+  .btn-close-modal {
     margin: 190px 0px 0 85px;
   }
 

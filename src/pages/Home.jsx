@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className="body">
       <div className="header">
-        <h1 className="first-title">Dimitri's Pomodoro</h1>
+        <h1 className="first-title">Pomodoro Timer</h1>
       </div>
       <div className="container">
         <Timer
