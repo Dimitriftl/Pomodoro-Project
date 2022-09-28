@@ -42,6 +42,7 @@ const Timer = ({
       setSeconds((seconds) => seconds - 1);
     }, 1000);
     return () => clearInterval(interval);
+    
   }
 
   // ici useEffect dépend de second en effet il va se lancer dè qu'une seconde sera retiré
@@ -53,6 +54,7 @@ const Timer = ({
         setMinutes((minutes) => minutes - 1);
       }
     }, 1000);
+    
 
     if (minutes < 0) {
       if (!autoPlayTimer) {
@@ -74,6 +76,9 @@ const Timer = ({
       setMinutes(preMinutes);
       notifBrake();
       song.play();
+    }
+    if(isTimerRunning){
+      document.title = `${timerMinutes}:${timerSeconds} Pomodoro Timer`;
     }
   }, [seconds]);
 
@@ -102,6 +107,8 @@ const Timer = ({
     setMinutes(preMinutes);
     setSeconds(0);
   }
+
+  
 
   return (
     <div>
