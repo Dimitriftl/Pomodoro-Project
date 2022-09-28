@@ -9,8 +9,8 @@ import PlaySvg from "../svg/PlaySvg";
 import ResetSvg from "../svg/ResetSvg";
 import PassSvg from "../svg/PassSvg";
 import CheckSound from "./check-sound.mp3";
-
 let interval = null;
+
 const Timer = ({
   minutes,
   setMinutes,
@@ -38,7 +38,6 @@ const Timer = ({
       setSeconds(59);
       setMinutes((minutes) => minutes - 1);
     }
-
     interval = setInterval(() => {
       setSeconds((seconds) => seconds - 1);
     }, 1000);
@@ -47,10 +46,14 @@ const Timer = ({
 
   // ici useEffect dépend de second en effet il va se lancer dè qu'une seconde sera retiré
   useEffect(() => {
-    if (seconds === 0 && isTimerRunning) {
-      setSeconds(59);
-      setMinutes((minutes) => minutes - 1);
-    }
+    let interval = setInterval(() => {
+      clearInterval(interval);
+      if (seconds === 0 && isTimerRunning) {
+        setSeconds(59);
+        setMinutes((minutes) => minutes - 1);
+      }
+    }, 1000);
+
     if (minutes < 0) {
       if (!autoPlayTimer) {
         pauseTimer();
@@ -59,14 +62,14 @@ const Timer = ({
       setSeconds(0);
     }
 
-    if (isBreakRunning == false && minutes < 0) {
+    if (isBreakRunning === false && minutes < 0) {
       setIsBreakRunning(true);
       setSeconds(0);
       setMinutes(minutesBreak);
       notif();
       song.play();
     }
-    if (isBreakRunning == true && minutes < 0) {
+    if (isBreakRunning === true && minutes < 0) {
       setIsBreakRunning(false);
       setMinutes(preMinutes);
       notifBrake();
