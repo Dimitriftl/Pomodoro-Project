@@ -85,14 +85,14 @@
     box-shadow: 0 0 0 20px rgb(15, 40, 184, 0.8);
   }
   25% {
-    box-shadow: 0 0 0 40px rgb(55, 31, 112, 0.8);
+    box-shadow: 0 0 0 30px rgb(55, 31, 112, 0.8);
   }
 
   50% {
     box-shadow: 0 0 0 25px rgb(15, 40, 184, 0.8);
   }
   75% {
-    box-shadow: 0 0 0 35px rgb(55, 31, 112, 0.8);
+    box-shadow: 0 0 0 30px rgb(55, 31, 112, 0.8);
   }
   100% {
     box-shadow: 0 0 0 20px rgb(15, 40, 184, 0.8);
