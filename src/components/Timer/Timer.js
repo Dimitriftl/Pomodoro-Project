@@ -80,6 +80,9 @@ const Timer = ({
     if(isTimerRunning){
       document.title = `${timerMinutes}:${timerSeconds} Pomodoro Timer`;
     }
+    else{
+      document.title = `Pomodoro Timer`;
+    }
   }, [seconds]);
 
   function notif() {

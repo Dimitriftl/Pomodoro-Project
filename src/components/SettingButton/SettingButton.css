@@ -39,8 +39,9 @@
   }
 }
 
-@media all and (max-width: 350px) {
+@media all and (max-width: 375px) {
   .setting-svg svg {
+    position: relative;
     height: 30px;
   }
   .setting-button {
