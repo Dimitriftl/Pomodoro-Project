@@ -8,8 +8,8 @@ label {
 
 .switch {
   position: relative;
-  top: 24px;
-  margin-left: 260px;
+  /* top: 24px; */
+  /* margin-left: 260px; */
   display: inline-block;
   width: 60px;
   height: 28px;
@@ -48,7 +48,7 @@ label {
 }
 
 input:checked + .slider {
-  background-color: rgb(70, 76, 160);
+  background-color: #633de2;
 }
 
 input:checked + .slider:before {
@@ -66,9 +66,9 @@ input:checked + .slider:before {
 @media all and (max-width: 550px) {
   .switch {
     position: relative;
-    top: 22px;
-    margin-left: 180px;
-    display: inline-block;
+    /* top: 22px; */
+    /* margin-left: 180px; */
+    /* display: inline-block; */
     width: 50px;
     height: 25px;
   }

@@ -3,14 +3,14 @@ import React from "react";
 const PassSvg = ({ buttonPassTimer }) => {
   return (
     <div onClick={buttonPassTimer}>
-      <button className="button-reset">
+      <button>
         <svg
+        className="svgs"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6"
         >
           <path
             stroke-linecap="round"

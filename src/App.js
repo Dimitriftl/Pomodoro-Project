@@ -1,10 +1,17 @@
 import React from "react";
-import Home from "./pages/Home";
+// import { firebaseConfig } from './firebase-config.js';
+import Home from "./pages/Home"
+import {Routes, Route} from "react-router-dom"
+import Navbar from "./components/Navbar/Navbar";
+
 
 const App = () => {
   return (
     <>
-      <Home />
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
     </>
   );
 };

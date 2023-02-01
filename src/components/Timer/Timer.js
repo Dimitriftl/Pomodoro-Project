@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useSound from "use-sound";
 import { ToastContainer, toast } from "react-toastify";
-import "./style.css";
+import "./Timer.css";
 import "../SettingButton/SettingButton.css";
 import "react-toastify/dist/ReactToastify.css";
 import PauseSvg from "../svg/PauseSvg";
@@ -9,6 +9,7 @@ import PlaySvg from "../svg/PlaySvg";
 import ResetSvg from "../svg/ResetSvg";
 import PassSvg from "../svg/PassSvg";
 import CheckSound from "./check-sound.mp3";
+import SettingModal from "../SettingModal/SettingModal";
 let interval = null;
 
 const Timer = ({
@@ -19,6 +20,18 @@ const Timer = ({
   setSeconds,
   preMinutes,
   autoPlayTimer,
+  setPreMinutes,
+  setAutoPlayTimer,
+  setMinutesBreak,
+  numberOfPomodoroDone,
+  setNumberOfPomodoroDone,
+  numberOfPomodoro,
+  key,
+  id,
+  itemIdSelected,
+  setItemIdSelected,
+  setDataArr,
+  dataArr,
 }) => {
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
@@ -40,9 +53,8 @@ const Timer = ({
     }
     interval = setInterval(() => {
       setSeconds((seconds) => seconds - 1);
-    }, 1000);
+    }, 50);
     return () => clearInterval(interval);
-    
   }
 
   // ici useEffect dépend de second en effet il va se lancer dè qu'une seconde sera retiré
@@ -54,7 +66,6 @@ const Timer = ({
         setMinutes((minutes) => minutes - 1);
       }
     }, 1000);
-    
 
     if (minutes < 0) {
       if (!autoPlayTimer) {
@@ -68,6 +79,21 @@ const Timer = ({
       setIsBreakRunning(true);
       setSeconds(0);
       setMinutes(minutesBreak);
+
+      // Ici dataArr .filter filtre le tableau dataArr pour garder les items pas séléctionnés on regarde l'item qui n'est pas = a l'id de l'item selectionné, puis, on rajoute un élément on tableau que l'on a recuperé via filter. lélément que l'on rajoute aura les mêmes propriétés que l'item séléctionné (l'item que l'on na pas inclut dans le tableau via la methode filter),avec comme seul différence son nombre de pomodoro éffectué que l'on incrémente de 1.
+      if (itemIdSelected) {
+        setDataArr([
+          ...dataArr.filter((item) => itemIdSelected !== item.id),
+          {
+            ...dataArr.find((item) => itemIdSelected === item.id),
+            numberOfPomodoroDone:
+              dataArr.find((item) => itemIdSelected === item.id)
+                .numberOfPomodoroDone + 1,
+          },
+        ]);
+      }
+
+      console.log(dataArr.filter((item) => itemIdSelected !== item.id));
       notif();
       song.play();
     }
@@ -77,13 +103,14 @@ const Timer = ({
       notifBrake();
       song.play();
     }
-    if(isTimerRunning){
+    if (isTimerRunning) {
       document.title = `${timerMinutes}:${timerSeconds} Pomodoro Timer`;
-    }
-    else{
+    } else {
       document.title = `Pomodoro Timer`;
     }
   }, [seconds]);
+
+  // NOTIF
 
   function notif() {
     toast("focus time complete ! 🏆");
@@ -91,6 +118,10 @@ const Timer = ({
   function notifBrake() {
     toast("Back to work! 💻");
   }
+
+  //
+
+  // BUTTON TIMER
 
   function pauseTimer() {
     setIsTimerRunning(false);
@@ -111,10 +142,10 @@ const Timer = ({
     setSeconds(0);
   }
 
-  
+  //
 
   return (
-    <div>
+    <div className="pomodoroContainer">
       <ToastContainer theme="dark" />
       <div className="pomodoro">
         <div className={isBreakRunning ? "p-container-break" : "p-container"}>
@@ -130,7 +161,7 @@ const Timer = ({
                   isTimerRunning(false);
                 }}
               >
-                <div className="setting-svg">
+                <div className="svgs">
                   <PauseSvg />
                 </div>
               </button>
@@ -142,18 +173,17 @@ const Timer = ({
                   isTimerRunning(false);
                 }}
               >
-                <div className="setting-svg">
+                <div className="svgs">
                   <PlaySvg />
                 </div>
               </button>
             )}
-            <div className="setting-svg">
               {isBreakRunning ? (
                 <PassSvg buttonPassTimer={() => passTimer()} />
               ) : (
                 <ResetSvg buttonresetTimer={() => resetTimer()} />
               )}
-            </div>
+                
           </div>
           <div className="toggle-sentence">
             <p>
@@ -164,6 +194,16 @@ const Timer = ({
             </p>
           </div>
         </div>
+        <SettingModal
+          setMinutes={setMinutes}
+          minutes={minutes}
+          minutesBreak={minutesBreak}
+          setMinutesBreak={setMinutesBreak}
+          preMinutes={preMinutes}
+          setPreMinutes={setPreMinutes}
+          autoPlayTimer={autoPlayTimer}
+          setAutoPlayTimer={setAutoPlayTimer}
+        />
       </div>
     </div>
   );

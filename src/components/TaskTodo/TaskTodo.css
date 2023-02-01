@@ -1,0 +1,284 @@
+.taskContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  width: 100%;
+  color: #fff;
+}
+
+.taskButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  /* border: 2px solid rgb(39, 45, 68); */
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  gap: 1rem;
+}
+
+.taskButton:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.leftTaskContent {
+  display: flex;
+  /* align-items: center; */
+  width: 19rem;
+  height: 100%;
+  cursor: pointer;
+}
+
+.focusContainer {
+  min-height: 3.7rem;
+  background-color: #fff;
+  position: relative;
+  left: -1rem;
+  border-radius: 10px 0 0 10px;
+  background-color: #fff;
+  padding-right: 0.5rem;
+}
+
+.leftTaskContentText {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+}
+
+.taskButton p {
+  position: absolute;
+  left: 1rem;
+  font-size: 20px;
+}
+
+.taskButtonContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.taskContentContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 1440px;
+}
+
+.taskContent {
+  display: flex;
+  align-items: center;
+  min-width: 450px;
+  max-width: 1440px;
+  min-height: 4rem;
+  margin: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  /* border: 2px solid rgb(39, 45, 68); */
+  padding-left: 1rem;
+  padding-right: 2rem;
+  justify-content: space-between;
+  transition: all 0.2s;
+}
+
+.taskContent:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* TaskModal */
+
+.taskModal {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #160f27;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 450px;
+  height: 13rem;
+  border-radius: 10px;
+  transition: all 0.2s;
+  /* border: 2px solid rgb(39, 45, 68); */
+  box-shadow: 0px 0px 20px rgb(61, 48, 134);
+  z-index: 10;
+}
+
+.taskModalContent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.taskModalText::placeholder {
+  color: #fff;
+}
+
+.taskModalText {
+  display: flex;
+  width: 100%;
+  margin: 0.5rem;
+}
+
+.taskModalText input {
+  width: 100%;
+  height: 3rem;
+  background-color: #2b2547;
+  border: 0px;
+  border-radius: 5px;
+  padding-left: 1rem;
+  font-size: 20px;
+  color: white;
+  outline: none;
+}
+
+.taskModalnumber {
+  display: flex;
+  width: 100%;
+  margin: 0.5rem;
+}
+
+.taskModalnumber input {
+  width: 100%;
+  height: 3rem;
+  background-color: #2b2547;
+  border: 0px;
+  border-radius: 5px;
+  padding-left: 1rem;
+  font-size: 20px;
+  color: white;
+  outline: none;
+}
+
+.taskButtonsContainer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 60px;
+  margin: 0 0.5rem;
+  width: 100%;
+  /* background-color: aqua; */
+  gap: 1rem;
+}
+
+.saveButton {
+  right: 2rem;
+  cursor: pointer;
+  width: 90px;
+  height: 45px;
+  font-size: 18px;
+  background-color: #5b35d5;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background-origin: border-box;
+}
+
+.saveButton svg {
+  width: 35px;
+}
+
+.cancelButton {
+  width: 90px;
+  height: 45px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #41467000;
+  /* outline: none; */
+  border: 2px solid #272445;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rightTaskContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rightTaskContent button {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  background-color: #5b35d5;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.rightTaskContent svg {
+  width: 80%;
+  position: relative;
+  top: 2px;
+}
+
+@media all and (max-width: 470px) {
+  .taskButton {
+    width: 20rem;
+    height: 4rem;
+  }
+
+  .taskContent {
+    min-width: 0;
+    max-width: 1440px;
+    min-height: 4rem;
+    width: 20rem;
+  }
+  .taskModal {
+    max-width: 600px;
+    min-width: 350px;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .taskModal {
+    top: 50%;
+  }
+
+  .taskContainer {
+    margin-top: -5rem;
+  }
+}
+
+@media all and (max-width: 325px) { 
+  .taskButton {
+    width: 18rem;
+  }
+
+  .taskContent {
+    min-width: 0;
+    max-width: 1440px;
+    min-height: 4rem;
+    width: 18rem;
+  }
+  .taskModal {
+    max-width: 600px;
+    min-width: 18rem;
+    
+  }
+
+  .taskModal input { 
+    font-size: 16px;
+  }
+}

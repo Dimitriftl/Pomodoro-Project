@@ -12,22 +12,31 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: rgb(28, 31, 52);
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,26,54,1) 0%, rgba(24,15,42,1) 100%);
+  overflow-x: hidden;
+  width: 100vw;
 }
 
-/* ------HEADER------- */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(19, 22, 41);
-  height: 70px;
-  box-shadow: 2px 1px 15px rgb(6, 6, 6);
+::-webkit-scrollbar {
+  background-color: transparent;
 }
 
-.first-title {
+::-webkit-scrollbar-thumb {
+  background-color: rgb(69, 74, 118);
+  border-radius: 10px;
+}
+
+.Home {
   display: flex;
-  justify-content: center;
-  font-size: 23px;
-  color: rgb(221, 221, 221);
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.svgs { 
+  position: relative;
+  top: 3px;
+  height: 35px;
+  width: 35px;
+  /* background-color: aquamarine; */
 }

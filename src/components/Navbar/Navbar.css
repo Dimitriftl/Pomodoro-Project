@@ -1,0 +1,67 @@
+.Navbar { 
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(52, 35, 114); */
+  height: 70px;
+  /* box-shadow: 2px 1px 15px rgb(6, 6, 6); */
+  width: 100vw;
+  gap: 30px;
+}
+
+.navbarContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.navBarleftSide {
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 3rem;
+}
+
+.first-title {
+  margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    font-size: 34px;
+    color: rgb(245, 239, 239);
+    cursor: pointer;
+  }
+
+
+
+  .navBarRightSide {
+    display: flex;
+    margin-right: 3rem;
+    gap: 2rem;
+  }
+  
+  .btn-sign {
+    width: 70px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 0px; 
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .log-out {
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 0px;
+    background-color: transparent;
+    border: 1px solid rgb(155, 25, 25);
+    color: white;
+    cursor: pointer;
+  }

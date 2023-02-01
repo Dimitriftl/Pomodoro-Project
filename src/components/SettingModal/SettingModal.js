@@ -46,11 +46,6 @@ const Settings = ({
         <div className="modal-Setting">
           <div className="overlay"></div>
           <div className="modal-content">
-            <button className="btn-close-modal" onClick={toggleModal}>
-              <div className="check-svg">
-                <CheckSvg />
-              </div>
-            </button>
             <h3 className="setting-title">Settings</h3>
             <form>
               <div className="input-settings">
@@ -76,11 +71,20 @@ const Settings = ({
                 </div>
               </div>
             </form>
+              <div className="autoPlayContainer">
+              <p className="auto-start">Auto start Pomodoros ?</p>
             <ToggleSwitch
               autoPlayTimer={autoPlayTimer}
               setAutoPlayTimer={setAutoPlayTimer}
             />
-            <p className="auto-start">Auto start Pomodoros ?</p>
+            </div>
+            <div className="btnCloseModalContainer">
+              <button className="btn-close-modal" onClick={toggleModal}>
+                <div className="check-svg">
+                  <p>Apply modifications</p>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       )}

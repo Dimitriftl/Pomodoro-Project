@@ -1,0 +1,80 @@
+/* body.active-modal {
+  overflow-y: hidden;
+} */
+
+.SignUpBody {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+  }
+  
+  .SignUpOverlay {
+    background: rgba(49, 49, 49, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+  }
+  
+  .SignUpContent {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: rgb(13, 15, 28);
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 400px;
+    min-height: 270px;
+    border-radius: 20px;
+    border: 2px solid rgb(81, 81, 141);
+    z-index: 100;
+  }
+  
+  .SignUpContent h3{
+      color: white;
+  }
+  
+  .SignUpContentHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  
+  .SignUpContentBody {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+  }
+  
+  .inputBody{
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .errorText { 
+    color: rgb(181, 12, 12);
+  }
+  
+  .submitBtnContainer {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+  }
+  .submitBtn {
+    
+  }

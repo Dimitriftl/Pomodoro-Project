@@ -10,7 +10,7 @@ body.active-modal {
 }
 
 .modal-Setting p {
-  color: rgb(179, 179, 179);
+  color: #fff;
 }
 
 .modal,
@@ -25,7 +25,7 @@ body.active-modal {
 }
 
 .overlay {
-  background: rgba(49, 49, 49, 0.8);
+  background: rgba(49, 49, 49, 0.625);
 }
 
 .setting-title {
@@ -38,22 +38,23 @@ body.active-modal {
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
-  background: rgb(13, 15, 28);
+  background: #160f27;
   padding: 14px 28px;
-  border-radius: 3px;
-  max-width: 600px;
-  min-width: 400px;
-  min-height: 270px;
-  border-radius: 20px;
-  border: 2px solid rgb(81, 81, 141);
+  max-width: 400px;
+  width: 100%;
+  min-width: 450px;
+  min-height: 300px;
+  border-radius: 10px;
+  /* backdrop-filter: blur(4px); */
 }
 
 .input-settings {
   display: flex;
   justify-content: center;
+  /* background-color: #5B35D5; */
   gap: 20px;
 }
-input {
+.input-settings input {
   outline: none;
   border-radius: 5px;
   border: 1px solid transparent;
@@ -61,12 +62,15 @@ input {
 }
 
 .modal-Setting input {
-  background: rgb(35, 39, 69);
+  background: #2b2547;
   color: #fff;
   width: 100px;
+  font-size: 16px;
+  font-weight: bold;
 }
+
 .modal-Setting input:hover {
-  background: rgb(44, 49, 85);
+  background: rgb(49, 40, 80);
 }
 
 .input-settings p {
@@ -84,28 +88,53 @@ input {
   justify-content: center;
 }
 
-input {
-  height: 40px;
-  width: 20%;
-  font-size: 16px;
-  font-weight: bold;
+.autoPlayContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 5rem;
+  top: 1rem;
+  width: 100%;
+  height: 3rem;
+  /* background-color: aquamarine; */
+}
+
+.autoPlayContainer p { 
+  position: relative;
+  top: 0.1rem;
+}
+
+.btnCloseModalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 3rem;
+  width: 100%;
+  height: 60px;
+  /* background-color: aqua; */
 }
 
 .btn-close-modal {
   position: absolute;
-  margin: 190px 0px 0 137px;
-  padding: 5px 7px;
+  /* margin: 190px 0px 0 137px; */
   cursor: pointer;
-  width: 70px;
-  height: 40px;
-  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  width: 12rem;
+  height: 2.7rem;
+  font-size: 16px;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 5px;
+  background-color: #5B35D5;
   cursor: pointer;
-  border: solid 2px rgb(110, 115, 192);
+  border: none;
   background-origin: border-box;
   background-clip: content-box, border-box;
-  box-shadow: 2px 1000px 1px rgb(21, 21, 21) inset;
+}
+
+.btn-close-modal:hover {
+  background-color: #633de2;
+
 }
 
 .check-svg svg {
@@ -117,7 +146,6 @@ input {
 .auto-start {
   font-size: 16px;
   font-weight: bold;
-  margin-left: 24px;
 }
 
 @media all and (max-width: 550px) {
@@ -127,12 +155,17 @@ input {
   }
 
   .btn-close-modal {
-    margin: 190px 0px 0 85px;
+    /* margin: 190px 0px 0 85px; */
+  }
+
+  .autoPlayContainer { 
+    gap: 3rem;
   }
 
   .auto-start {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
-    margin-left: 2px;
+    /* background-color: aquamarine; */
+    /* margin-left: 2px; */
   }
 }
