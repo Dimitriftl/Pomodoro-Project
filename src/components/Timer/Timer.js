@@ -53,7 +53,7 @@ const Timer = ({
     }
     interval = setInterval(() => {
       setSeconds((seconds) => seconds - 1);
-    }, 50);
+    }, 1000);
     return () => clearInterval(interval);
   }
 
